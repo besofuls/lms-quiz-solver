@@ -1,52 +1,71 @@
 # 🎓 LMS Quiz Solver Pro - AI Trợ Lý Giải Trắc Nghiệm Tự Động
 
-Ứng dụng tự động hóa giải bài trắc nghiệm (Moodle LMS, Google Forms, Canvas, Quizizz,...) sử dụng **Google Gemini Vision AI** và **Browser-Use**, hỗ trợ đa trình duyệt và cơ chế xoay tua đa API Keys chống lỗi giới hạn hạn mức (429 Rate Limit).
+Ứng dụng tự động hóa giải bài trắc nghiệm (Moodle LMS, Google Forms, Canvas, Quizizz,...) sử dụng **Google Gemini Vision AI** và **Browser-Use**, hỗ trợ đa trình duyệt và cơ chế xoay tua đa API Keys chống lỗi hạn mức (429 Rate Limit).
 
 ---
 
-## ✨ Tính Năng Nổi Bật
+## ⚡ DÀNH CHO NGƯỜI DÙNG PHỔ THÔNG (NON-TECH)
 
-- 🌐 **Hỗ trợ mọi trình duyệt:** Tự động nhận diện và kết nối trực tiếp với **Microsoft Edge, Google Chrome, Cốc Cốc, Brave, Opera,...** qua cổng CDP (giữ nguyên phiên đăng nhập và cookie cá nhân).
-- 🔑 **Đa API Keys Xoay Tua (Round-Robin):** Tự động luân phiên nhiều tài khoản Google Gemini, loại bỏ hoàn toàn lỗi nghẽn hạn mức 250k token/phút.
-- 👁️ **Thị giác máy tính (Multimodal Vision):** Đọc và phân tích được cả câu hỏi bằng **hình ảnh, sơ đồ, bảng biểu, đoạn code chụp lại**.
-- 🖥️ **Giao diện Desktop hiện đại (GUI):** Xây dựng bằng `CustomTkinter` với Dark Mode đẹp mắt, không cần mở dòng lệnh terminal.
-- 🛡️ **An toàn tuyệt đối:** Tự động dừng tại trang tổng kết bài làm (*Summary of attempt*), không tự ý nộp bài.
+Bạn **không cần biết lập trình**, **không cần cài Python**, chọn 1 trong 3 cách siêu nhanh dưới đây:
+
+### 🟢 Cách 1: Tải về là dùng ngay (Khuyên dùng - 0 Giây cài đặt)
+1. Bấm vào link này để tải file thực thi: 👉 **[Tải LMS_Quiz_Solver_Pro.exe (Bản Mới Nhất)](https://github.com/besofuls/lms-quiz-solver/releases/latest)**
+2. Nhấp đúp chuột vào file **`LMS_Quiz_Solver_Pro.exe`** vừa tải về là phần mềm mở lên ngay lập tức!
 
 ---
 
-## 🚀 Cài Đặt & Chạy Ứng Dụng
+### ⚡ Cách 2: Chạy 1 lệnh duy nhất trong PowerShell
+Mở **PowerShell** trên Windows và dán dòng lệnh sau rồi nhấn **Enter**:
+```powershell
+irm https://raw.githubusercontent.com/besofuls/lms-quiz-solver/main/install.ps1 | iex
+```
+*(Lệnh này sẽ tự động tải file `.exe` về máy và mở phần mềm lên cho bạn)*
 
-### 1. Yêu cầu hệ thống
-- Python >= 3.11
-- Hệ điều hành: Windows 10/11
+---
 
-### 2. Cài đặt các thư viện cần thiết
+### 📁 Cách 3: Tải mã nguồn ZIP về và nhấp đúp `QuickStart.bat`
+Nếu bạn tải file **Source code (zip)** về máy:
+* Chỉ cần **nhấp đúp chuột vào file `QuickStart.bat`**.
+* File này sẽ **tự động làm hết từ A-Z**: tự kiểm tra Python, tự tạo môi trường, tự tải thư viện và tự mở app lên!
+
+---
+
+## 🛠️ DÀNH CHO LẬP TRÌNH VIÊN (DEVELOPERS)
+
+Nếu bạn muốn chỉnh sửa mã nguồn hoặc tự build lại ứng dụng:
+
 ```bash
-# Tạo môi trường ảo
+# 1. Clone repository
+git clone https://github.com/besofuls/lms-quiz-solver.git
+cd lms-quiz-solver
+
+# 2. Tạo môi trường ảo & cài đặt
 python -m venv .venv
 .\.venv\Scripts\activate
-
-# Cài đặt thư viện
 pip install -r requirements.txt
-playwright install
-```
+playwright install chromium
 
-### 3. Khởi chạy giao diện
-```bash
+# 3. Chạy giao diện mã nguồn
 python app.py
-# Hoặc nhấp đúp file run_app.bat
-```
 
-### 4. Đóng gói thành file .exe độc lập
-```bash
-# Nhấp đúp file build_exe.bat
-# Hoặc chạy lệnh:
+# 4. Tự đóng gói thành file .exe độc lập
+# Nhấp đúp build_exe.bat hoặc chạy:
 pyinstaller --noconsole --onefile --name "LMS_Quiz_Solver_Pro" --collect-all customtkinter --hidden-import=browser_use --hidden-import=google.genai --hidden-import=dotenv app.py
 ```
 
 ---
 
-## 📖 Hướng Dẫn Sử Dụng
+## ✨ Các Tính Năng Nổi Bật
+
+- 🌐 **Hỗ trợ mọi trình duyệt:** Tự động nhận diện và kết nối trực tiếp với **Microsoft Edge, Google Chrome, Cốc Cốc, Brave, Opera,...** qua cổng CDP (giữ nguyên phiên đăng nhập và cookie cá nhân).
+- 🔑 **Đa API Keys Xoay Tua (Round-Robin):** Tự động luân phiên nhiều tài khoản Google Gemini, loại bỏ hoàn toàn lỗi nghẽn hạn mức 250k token/phút.
+- 👁️ **Thị giác máy tính (Multimodal Vision):** Đọc và phân tích được cả câu hỏi bằng **hình ảnh, sơ đồ, bảng biểu, đoạn code chụp lại**.
+- 🖥️ **Giao diện Desktop hiện đại (GUI):** Xây dựng bằng `CustomTkinter` với Dark Mode đẹp mắt.
+- 🛡️ **An toàn tuyệt đối:** Tự động dừng tại trang tổng kết bài làm (*Summary of attempt*), không tự ý nộp bài.
+
+---
+
+## 📖 Hướng Dẫn Sử Dụng 3 Bước
 
 1. Mở ứng dụng `LMS_Quiz_Solver_Pro`.
 2. Vào tab **🔑 Quản Lý API Keys** để dán danh sách API Key Gemini (lấy miễn phí tại [Google AI Studio](https://aistudio.google.com/)).
