@@ -4,7 +4,7 @@
 
 ---
 
-## ⚡ DÀNH CHO NGƯỜI DÙNG PHỔ THÔNG (NON-TECH)
+## ⚡ DÀNH CHO NGƯỜI DÙNG PHỔ THÔNG
 
 Bạn **không cần biết lập trình**, **không cần cài Python**, chọn 1 trong 3 cách siêu nhanh dưới đây:
 
