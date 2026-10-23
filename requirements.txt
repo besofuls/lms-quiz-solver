@@ -1,0 +1,5 @@
+browser-use>=0.13.0
+customtkinter>=6.0.0
+google-genai>=1.0.0
+playwright>=1.40.0
+python-dotenv>=1.0.0

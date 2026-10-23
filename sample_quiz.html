@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Kiểm Tra Trắc Nghiệm Mẫu</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 650px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+        .question { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
+        .question h3 { margin-top: 0; color: #333; }
+        label { display: block; margin: 8px 0; cursor: pointer; }
+        button { background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        #result { margin-top: 20px; font-weight: bold; font-size: 18px; color: green; }
+    </style>
+</head>
+<body>
+    <h2>Kiểm Tra Tự Động Trắc Nghiệm (Demo Quiz)</h2>
+    <form id="quizForm">
+        <div class="question">
+            <h3>Câu 1: Thủ đô của Việt Nam là gì?</h3>
+            <label><input type="radio" name="q1" value="HCM"> TP. Hồ Chí Minh</label>
+            <label><input type="radio" name="q1" value="HN"> Hà Nội</label>
+            <label><input type="radio" name="q1" value="DN"> Đà Nẵng</label>
+            <label><input type="radio" name="q1" value="HP"> Hải Phòng</label>
+        </div>
+
+        <div class="question">
+            <h3>Câu 2: Python là ngôn ngữ thuộc loại nào?</h3>
+            <label><input type="radio" name="q2" value="A"> Ngôn ngữ lập trình thông dịch</label>
+            <label><input type="radio" name="q2" value="B"> Hệ điều hành</label>
+            <label><input type="radio" name="q2" value="C"> Phần cứng máy tính</label>
+            <label><input type="radio" name="q2" value="D"> Trình duyệt web</label>
+        </div>
+
+        <div class="question">
+            <h3>Câu 3: Hành tinh nào lớn nhất trong Hệ Mặt Trời?</h3>
+            <label><input type="radio" name="q3" value="A"> Trái Đất</label>
+            <label><input type="radio" name="q3" value="B"> Sao Hỏa</label>
+            <label><input type="radio" name="q3" value="C"> Sao Mộc (Jupiter)</label>
+            <label><input type="radio" name="q3" value="D"> Sao Kim</label>
+        </div>
+
+        <button type="button" id="submitBtn" onclick="calculateScore()">Nộp bài</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const answers = { q1: "HN", q2: "A", q3: "C" };
+            for (let q in answers) {
+                const checked = document.querySelector(`input[name="${q}"]:checked`);
+                if (checked && checked.value === answers[q]) {
+                    score++;
+                }
+            }
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerText = `Chúc mừng bạn! Kết quả của bạn: ${score}/3 điểm.`;
+        }
+    </script>
+</body>
+</html>

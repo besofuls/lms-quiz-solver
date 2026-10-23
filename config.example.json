@@ -1,0 +1,11 @@
+{
+  "api_keys": [
+    "YOUR_GEMINI_API_KEY_1",
+    "YOUR_GEMINI_API_KEY_2",
+    "YOUR_GEMINI_API_KEY_3"
+  ],
+  "default_url": "https://lms-hcm.fpt.edu.vn/",
+  "selected_browser": "Microsoft Edge",
+  "speed_mode": "turbo",
+  "custom_browser_path": ""
+}
